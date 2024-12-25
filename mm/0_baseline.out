@@ -1,0 +1,18 @@
+==33110== NVPROF is profiling process 33110, command: ./run_test
+==33110== Profiling application: ./run_test
+==33110== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   92.59%  7.30456s         1  7.30456s  7.30456s  7.30456s  matmul_baseline(double*, double*, double*, int)
+                    3.84%  303.06ms         1  303.06ms  303.06ms  303.06ms  [CUDA memcpy DtoH]
+                    3.57%  281.69ms         3  93.898ms  63.557ms  151.36ms  [CUDA memcpy HtoD]
+      API calls:   87.43%  7.30502s         1  7.30502s  7.30502s  7.30502s  cudaDeviceSynchronize
+                    7.02%  586.22ms         4  146.55ms  63.625ms  304.11ms  cudaMemcpy
+                    5.54%  462.58ms         3  154.19ms  1.1140ms  460.34ms  cudaMalloc
+                    0.01%  603.52us         1  603.52us  603.52us  603.52us  cuDeviceTotalMem
+                    0.01%  528.67us        97  5.4500us     304ns  225.83us  cuDeviceGetAttribute
+                    0.00%  64.222us         1  64.222us  64.222us  64.222us  cuDeviceGetName
+                    0.00%  49.416us         1  49.416us  49.416us  49.416us  cudaLaunchKernel
+                    0.00%  6.7380us         1  6.7380us  6.7380us  6.7380us  cuDeviceGetPCIBusId
+                    0.00%  2.3150us         3     771ns     374ns  1.4740us  cuDeviceGetCount
+                    0.00%  1.4200us         2     710ns     376ns  1.0440us  cuDeviceGet
+                    0.00%     474ns         1     474ns     474ns     474ns  cuDeviceGetUuid
